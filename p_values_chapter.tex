@@ -37,24 +37,30 @@
    \frac{P\left(\text{obs|A}\right) P\left(\text{A}\right)}{P\left(\text{obs}\right)} = \nonumber \\
    &=\frac{P\left(\text{obs|A}\right) P\left(\text{A}\right)}{P\left(\text{obs|A}\right) P\left(\text{A}\right)+P\left(\text{obs|!A}\right) P\left(\text{!A}\right)} 
 \end{align}
-\begin{align}\label{hyp_compare_bayes_not_A}
-   &P\left(\text{!A|obs}\right)=
-   \frac{P\left(\text{obs|!A}\right) P\left(\text{!A}\right)}{P\left(\text{obs}\right)} = \nonumber \\
-   &=\frac{P\left(\text{obs|!A}\right) P\left(\text{!A}\right)}{P\left(\text{obs|A}\right) P\left(\text{A}\right)+P\left(\text{obs|!A}\right) P\left(\text{!A}\right)}
+
+\begin{align}\label{hyp_compare_bayes_B}
+   &P\left(\text{B|obs}\right)=
+   \frac{P\left(\text{obs|B}\right) P\left(\text{B}\right)}{P\left(\text{obs}\right)} = \nonumber \\
+   &=\frac{P\left(\text{obs|B}\right) P\left(\text{B}\right)}{P\left(\text{obs|A}\right) P\left(\text{A}\right)+P\left(\text{obs|B}\right) P\left(\text{B}\right)}
 \end{align}
 
 
 $P\left(\text{A|obs}\right)$ -- вероятность того, что $\text{A}$ верна, при условии того (то есть после того), что сделано наблюдение $\text{obs}$; $P\left(\text{A}\right)$ - это априорная (до наблюдения) вероятность того, что $\text{A}$ верна, $P\left(\text{obs|A}\right)$ - условная вероятность (правдоподобие) получить $\text{obs}$, если $\text{A}$ верна, то есть рассчитанная исходя из модели, которая формулируется в этой гипотезе. Ничего принципиально отличного от предыдущей главы, просто вместо оценки параметров модели - гипотезы о том, работает модель или нет.
 
-Четвёртая вероятность в формулах \eqref{hyp_compare_bayes_null} и \eqref{hyp_compare_bayes_not_null} -- вероятность наблюдения $P\left(\text{obs}\right)$ (в англоязычной литературе она называется evidence), которая представлена одинаковой статсуммой в знаменателях, \eqref{hyp_compare_bayes_null} и \eqref{hyp_compare_bayes_not_null}. Часто при сравнении гипотез её вообще опускают, и из \eqref{hyp_compare_bayes_null} и \eqref{hyp_compare_bayes_not_null} получается:
+Одинаковый знаменатель в формулах \eqref{hyp_compare_bayes_A} и \eqref{hyp_compare_bayes_B} -- это вероятность наблюдения $P\left(\text{obs}\right)$ (в англоязычной литературе она называется evidence). Часто при сравнении гипотез её вообще опускают, и из \eqref{hyp_compare_bayes_A} и \eqref{hyp_compare_bayes_B} получается:
 \begin{align}\label{hyp_compare_bayes_comp}
-   &\frac{P\left(\text{NULL|obs}\right)}{P\left(\text{!NULL|obs}\right)}=\frac{P\left(\text{obs|NULL}\right) P\left(\text{NULL}\right)}{P\left(\text{obs|!NULL}\right) P\left(\text{!NULL}\right)}
+   &\frac{P\left(\text{A|obs}\right)}{P\left(\text{B|obs}\right)}=\frac{P\left(\text{obs|A}\right) P\left(\text{A}\right)}{P\left(\text{obs|B}\right) P\left(\text{B}\right)}
 \end{align}.
 
 Иногда просто пишут 
 \begin{align}\label{hyp_compare_bayes_null_prop}
    &P\left(\text{A|obs}\right)\propto P\left(\text{obs|A}\right) P\left(\text{A}\right)
 \end{align}
+
+Иногда статистическая сумма (evidence) в знаменателе нужно, хотя, казалось бы, для вычисления апостериорных вероятностей она совершенно не нужна. Представим себе, что у нас есть две гипотезы $A$ и $B$.
+
+
+
 
 \section*{Нулевые и альтернативные гипотезы}
 

@@ -8,10 +8,10 @@ bibfile=p-values.bib
 all: $(name).pdf 
 
 $(name).pdf: $(name).tex $(bibfile)
-	#pdflatex $(name).tex
-	#bibtex $(name)
-	pdflatex $(name).tex
-	pdflatex $(name).tex
+	pdflatex $(name)
+	bibtex $(name)
+	pdflatex $(name)
+	pdflatex $(name)
 
 clean: 
 	rm -f $(name).bbl $(name).blg $(name).log $(name).nav $(name).toc $(name).aux $(name).snm $(name).out *~

@@ -35,7 +35,7 @@
 \begin{align}\label{hyp_compare_bayes_A}
    &P\left(\text{A|obs}\right)=
    \frac{P\left(\text{obs|A}\right) P\left(\text{A}\right)}{P\left(\text{obs}\right)} = \nonumber \\
-   &=\frac{P\left(\text{obs|A}\right) P\left(\text{A}\right)}{P\left(\text{obs|A}\right) P\left(\text{A}\right)+P\left(\text{obs|!A}\right) P\left(\text{!A}\right)} 
+   &=\frac{P\left(\text{obs|A}\right) P\left(\text{A}\right)}{P\left(\text{obs|A}\right) P\left(\text{A}\right)+P\left(\text{obs|B}\right) P\left(\text{B}\right)} 
 \end{align}
 
 \begin{align}\label{hyp_compare_bayes_B}
@@ -57,7 +57,11 @@ $P\left(\text{A|obs}\right)$ -- вероятность того, что $\text{A
    &P\left(\text{A|obs}\right)\propto P\left(\text{obs|A}\right) P\left(\text{A}\right)
 \end{align}
 
-Иногда \cite{skilling_nested_2006} статистическую сумму в знаменателе (evidence) нужно, хотя, казалось бы, для вычисления апостериорных вероятностей она совершенно не нужна. Представим себе, что у нас есть две гипотезы $A$ и $B$.
+Иногда \cite{skilling_nested_2006} статистическую сумму в знаменателе (evidence) нужно считать, хотя, казалось бы, для вычисления апостериорных вероятностей она совершенно бесполезна. Пусть у гипотезы $A$ есть параметр $\alpha$. Считаем его апостериорное распределение после наблюдения $obs$. Само это распределение имеет смысл только если $A$ верна, так что 
+\begin{align}\label{hyp_compare_evid_A}
+   P\left(\alpha\text{|obs,A}\right)=\frac{P\left(\text{obs|}\alpha\text{,A}\right) P\left(\alpha\text{|A}\right)}{P\left(\text{obs|A}\right)}
+\end{align}
+$P\left(\text{obs|A}\right)$ - это evidence в \eqref{hyp_compare_evid_A}, он считается как статистическая сумма по всем возможным значениям $\alpha$ - и эта же условная вероятность - $P\left(\text{obs|A}\right)$ - это значение правдоподобия гипотезы $A$ в  \eqref{hyp_compare_bayes_A}. Получается, что когда мы оцениваем апостериорные распределения параметра (или, что то же самое, сравниваем вероятности вариантов гипотезы) при условии, что сама гипотеза верна, evidence -- это оценка адекватности гипотезы наблюдениям. Вспомогательная статистическая сумма стала едва ли не главным результатом вычислений.
 
 \section*{Нулевые и альтернативные гипотезы}
 
